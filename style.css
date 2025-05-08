@@ -1,0 +1,144 @@
+.p-5{
+    padding:1.25rem
+}
+
+.background{
+    --tw-bg-opacity:1;
+    background-color:rgba(22,18,23,var(--tw-bg-opacity))
+}
+
+.flex{
+    display:flex
+}
+
+.items-center{
+    align-items:center
+}
+
+.justify-center{
+    justify-content:center
+}
+
+.min-h-screen{
+    min-height:100vh
+}
+
+.widget-background{
+    --tw-bg-opacity:1;
+    background-color:rgba(34,30,36,var(--tw-bg-opacity))
+}
+
+.rounded-lg{
+    border-radius:1.5rem
+}
+
+.shadow-lg{
+    --tw-shadow:0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)
+}
+
+.w-auto{
+    width:auto
+}
+
+.gap-4{
+    gap:1rem
+}
+
+.gap-40{
+    gap:10rem
+}
+
+.flex-col{
+    flex-direction:column
+}
+
+.text-xl{
+    font-size:1.25rem;
+    line-height:1.75rem
+}
+
+.font-bold{
+    font-weight:700
+}
+
+.title-text{
+    --tw-text-opacity:1;
+    color:rgba(225,183,245,var(--tw-text-opacity))
+}
+
+.text-lg{
+    font-size:1.125rem;
+    line-height:1.75rem
+}
+
+.artist-text{
+    --tw-text-opacity:1;
+    color:rgba(116, 81, 134,var(--tw-text-opacity))
+}
+
+.mt-1{
+    margin-top:.25rem
+}
+
+.mt-4{
+    margin-top:1rem
+}
+
+.w-full{
+    width:100%
+}
+
+html{
+    font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    line-height:1.5
+}
+
+body{
+    font-family:inherit;
+    line-height:inherit;
+    background-color: #161217;
+}
+
+#track-name {
+    text-decoration: none;
+}
+  
+#track-name:hover {
+    text-decoration: underline;
+}
+
+#artist-names a {
+    text-decoration: none;
+    --tw-text-opacity:1;
+    color:rgba(116, 81, 134,var(--tw-text-opacity))
+}
+  
+#artist-names a:hover {
+    text-decoration: underline;
+}
+
+#widget-container {
+    min-width: 500px;
+    box-shadow: 0 0 15px rgba(94,56,106, 0.5);
+    transition: box-shadow 0.3s ease;
+  }
+  
+#widget-container:hover {
+    box-shadow: 0 0 25px rgba(94,56,106, 0.7);
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #5c396c;
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+}
+  
+.progress-bar {
+    background-color: #f7d8ff;
+    height: 100%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
