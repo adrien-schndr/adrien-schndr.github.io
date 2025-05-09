@@ -28,11 +28,17 @@ async function fetchData() {
         const response = await fetch("https://anthropium--d6099faf39bd4c35a48f274fb4accc61.web.val.run");
         const data = await response.json();
 
-        document.getElementById('track-name').textContent = data.shortenedName;
+        trackContainer = document.getElementById('track-name');
         document.getElementById('last-activity-timestamp').textContent = `${timeAgo(data.elapsedTimeSinceActivity_ms)}`;
-        document.getElementById('track-name').href = data.link;
+
+        trackContainer.innerHTML = '';
+        const trackLink = document.createElement('a');
 
         if (data.isplaying == true) {
+            trackLink.href = data.link;
+            trackLink.textContent = data.shortenedName;
+            trackLink.classList.add('text-xl', 'font-bold', 'title-text', "hover:underline");
+            trackContainer.appendChild(trackLink);
             document.getElementById('album-cover').src = data.image;
             const progressText = document.getElementById('progress-text');
             const minutes = Math.floor(data.progress_ms / 60000);
@@ -58,16 +64,13 @@ async function fetchData() {
                 progressBar.style.width = `${percent}%`;
             }
         } else {
+            trackLink.textContent = data.shortenedName;
             document.getElementById('album-cover').src = 'assets/spotify.svg';
             document.getElementById('progress-text').textContent = '-:-- / -:--';
             document.getElementById('artist-names').textContent = "n/A";
             document.getElementById('custom-progress').style.width = `0%`;
         }
-
-        
-
-
-        
+        trackContainer.appendChild(trackLink);
 
         document.getElementById('widget-container').style.display = 'block';
 
