@@ -1,14 +1,41 @@
-let url = web();
+function timeAgo(timestamp) {
+    const units = [
+        { label: "year", seconds: 31536000 },
+        { label: "month", seconds: 2592000 },
+        { label: "week", seconds: 604800 },
+        { label: "day", seconds: 86400 },
+        { label: "hour", seconds: 3600 },
+        { label: "minute", seconds: 60 },
+    ];
+  
+    const secondsElapsed = Math.floor(timestamp / 1000);
+  
+    if (secondsElapsed < 60) {
+        return "less than a minute ago";
+    }
+  
+    for (const unit of units) {
+        const interval = Math.floor(secondsElapsed / unit.seconds);
+        if (interval >= 1) {
+            return `about ${interval} ${unit.label}${interval > 1 ? "s" : ""} ago`;
+        }
+    }
+}
 
 async function fetchData() {
     try {
-        const response = await fetch(url);
+        const response = await fetch("https://anthropium--d6099faf39bd4c35a48f274fb4accc61.web.val.run");
         const data = await response.json();
 
         document.getElementById('track-name').textContent = data.shortenedName;
+        document.getElementById('last-activity-timestamp').textContent = `${timeAgo(data.elapsedTimeSinceActivity_ms)}`;
         document.getElementById('track-name').href = data.link;
 
-        document.getElementById('album-cover').src = data.image;
+        if (data["image"]) {
+            document.getElementById('album-cover').src = data.image;
+        } else {
+            document.getElementById('album-cover').src = 'assets/spotify.svg';
+        }
 
         const artistContainer = document.getElementById('artist-names');
         artistContainer.innerHTML = '';
@@ -34,6 +61,8 @@ async function fetchData() {
         const minutes = Math.floor(data.progress_ms / 60000);
         const seconds = Math.floor((data.progress_ms % 60000) / 1000);
         progressText.textContent = `${minutes}:${seconds.toString().padStart(2, '0')} / ${Math.floor(data.duration_ms / 60000)}:${Math.floor((data.duration_ms % 60000) / 1000).toString().padStart(2, '0')}`;
+
+        
 
         document.getElementById('widget-container').style.display = 'block';
 

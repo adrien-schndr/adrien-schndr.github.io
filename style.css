@@ -142,3 +142,49 @@ body{
     transition: width 0.3s ease;
     border-radius: 10px;
 }
+
+/* Styles pour les écrans plus petits (par exemple, téléphones) */
+@media (max-width: 600px) {
+    #widget-container {
+        min-width: unset; /* Supprime la contrainte de largeur minimale */
+        width: 90%; /* Prend 90% de la largeur de l'écran pour laisser un peu de marge */
+        padding: 1rem; /* Réduit le padding pour économiser de l'espace */
+    }
+
+    #widget-container .flex.items-center.gap-4 {
+        flex-direction: column; /* Empile la pochette et le texte verticalement */
+        align-items: center; /* Centre les éléments horizontalement */
+        gap: 0.5rem; /* Réduit l'espace entre les éléments */
+    }
+
+    #album-cover {
+        min-width: 6rem; /* Réduit la taille minimale de l'image */
+        max-width: 6rem; /* Réduit la taille maximale de l'image */
+        margin-bottom: 0.5rem; /* Ajoute un petit espace sous l'image */
+    }
+
+    #track-name {
+        text-align: center; /* Centre le texte du titre */
+        font-size: 1.1rem; /* Réduit légèrement la taille de la police du titre */
+        line-height: 1.4;
+    }
+
+    #artist-names {
+        text-align: center; /* Centre le texte des artistes */
+        font-size: 0.95rem; /* Réduit légèrement la taille de la police des artistes */
+        line-height: 1.3;
+    }
+
+    .progress-container {
+        height: 15px; /* Rend la barre de progression un peu moins haute */
+    }
+
+    #progress-text,
+    #last-activity-timestamp {
+        font-size: 0.85rem; /* Réduit la taille de la police pour les textes de progression/timestamp */
+    }
+
+    .mt-4 {
+        margin-top: 0.75rem; /* Réduit un peu l'espacement supérieur */
+    }
+}
