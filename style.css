@@ -165,15 +165,16 @@ body{
         width: 100%;
     }
 
-    #widget-container .flex.items-center.gap-4 > .flex.flex-col.justify-center {
-        width: 100%;
-    }
-
     #album-cover {
+        width: 95%;
         min-width: unset;
         max-width: unset;
         height: auto;
         margin: 2vw 2vw 0.5rem;
+    }
+
+    #widget-container .flex.items-center.gap-4 > .flex.flex-col.justify-center {
+        width: 100%;
     }
 
     #track-name {
