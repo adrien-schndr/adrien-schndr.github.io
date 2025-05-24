@@ -5,39 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
-    <title>Spotify Widget</title>
-    <script src="web.js"></script>
-    <script src="script.js"></script>
+    <title>App Screen</title>
 </head>
-<body class="background flex items-center justify-center min-h-screen">
-
-<div id="widget-container" class="widget-content-frame widget-background p-5 rounded-lg shadow-lg w-auto" style="display: block;">
-    <div class="flex items-center gap-4">
-        <div>
-            <a id="track-link" target="_blank">
-                <img id="album-cover" 
-                     alt="Album Cover" 
-                     style="border-radius:1rem" 
-                     class="card"
-                     src='assets/spotify.svg'>
-            </a>
-        </div>
-        <div class="flex flex-col justify-center">
-            <div id="track-name" class="text-xl font-bold title-text hover:underline">Loading...</div>
-            <div id="artist-names" class="text-lg artist-text">&#8203;</div>
-        </div>
-    </div>
-
-    <div class="mt-4">
-        <div class="flex flex-col items-center">
-            <div class="progress-container" style="position: relative;">
-                <div id="custom-progress" class="progress-bar" style="width:0%"></div>
+<body>
+    <div class="flex items-center justify-center min-h-screen">
+        <div id="widget-container" class="widget-content-frame widget-background p-5 rounded-lg shadow-lg w-auto ">
+            <div id="app-name" class="text-xl font-bold title-text gap-40">Apps</div>
+            <div class="flex items-center justify-center gap-40">
+                <div class="flex flex-col items-center mt-4">
+                    <a id="app-link" href="https://mel.schndr.pro/spotify-player" target="_blank">
+                        <img id="app-icon" 
+                            alt="App Icon" 
+                            style="border-radius:1rem" 
+                            class="card"
+                            src='public/spotify.svg'>
+                    </a>
+                    <a id="app-name-link" href="https://mel.schndr.pro/spotify-player" target="_blank">
+                        <div id="app-name" class="text-l font-bold title-text">Spotify</div>
+                    </a>
+                </div>
             </div>
-            <div id="progress-text" class="text-sm artist-text mt-1">-:-- / -:--</div>
-            <div id="last-activity-timestamp" class="text-sm title-text mt-1">Latest activity: loading...</div>
         </div>
     </div>
-</div>
-
 </body>
 </html>
