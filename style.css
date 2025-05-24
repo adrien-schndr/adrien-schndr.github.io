@@ -14,6 +14,11 @@ body {
 #app-icon {
     min-width: 6rem;
     max-width: 6rem;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
 }
 
 #app-name-link {
@@ -23,8 +28,8 @@ body {
 
 #widget-container {
     min-width: 500px;
-    box-shadow: 0 0 15px rgba(94,56,106, 0.5);
     transition: box-shadow 0.3s ease;
+    border-radius:1.5rem
   }
 
 #widget-container .flex.items-center.gap-4 {
